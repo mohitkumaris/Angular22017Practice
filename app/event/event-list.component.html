@@ -1,8 +1,12 @@
+
 <div>
     <h1>Upcoming Angular Events</h1>
-    <hr>
-<div class="well hoverwell thumbnail">
-    <h2>{{event.name}}</h2>
-    <div>Date: {{event.date}}</div>
-</div>
+    <hr/>
+    <div class="row">
+        <div *ngFor="let event of events" class="col-md-5">
+<event-thumbnail  [event]="event" (eventClick)="handleClickEvent(event.name)">
+
+</event-thumbnail>
+    </div>
+    </div>
 </div>
