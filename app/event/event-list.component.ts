@@ -322,7 +322,7 @@ export class EventListComponent{
             ]
         }
     ];
-    static handleClickEvent(data){
+     handleClickEvent(data){
 
         console.log('received:',data);
     }

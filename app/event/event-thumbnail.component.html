@@ -9,4 +9,6 @@
     <div>Price: ${{event?.price}}</div>
     <div>Location: {{event.location.address}}</div>
     <div *ngIf="event.Nodata">No Data: {{event.Nodata}}</div>
+    <button class="btn-primary" (click)="handleClickMe()" >Click me to send value from Child to Parent</button>
 </div>
+
