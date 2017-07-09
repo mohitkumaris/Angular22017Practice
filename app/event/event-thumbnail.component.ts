@@ -5,7 +5,8 @@ import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
     selector:'event-thumbnail',
-    templateUrl:'./app/event/event-thumbnail.component.html'
+    templateUrl:'./app/event/event-thumbnail.component.html',
+    styles:[`.green {color: #51a351}`]
 })
 
 export class EventThumbnailComponent{
@@ -16,6 +17,12 @@ export class EventThumbnailComponent{
     handleClickMe(){
         this.eventClick.emit();
     }*/
-
+  getEarlyTimeClass(){
+      const EarlyClass=this.event && this.event.time === '8:00 am';
+      return { green:EarlyClass }
+      // we can return like 'green'
+      // and we can return like ['green','bold']
+      // So there are 3 ways to return class object
+  }
 
 }

@@ -162,6 +162,7 @@ export class EventListComponent{
                 city: 'Salt Lake City',
                 country: 'USA'
             },
+            Nodata:'No Data',
             sessions: [
                 {
                     id: 1,
