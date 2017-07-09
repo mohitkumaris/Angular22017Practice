@@ -1,5 +1,5 @@
 Angular 2
-Its a basic example
+Its a basic example of Angular 2
 
 
 Getting Started
