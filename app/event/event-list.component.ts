@@ -3,7 +3,7 @@
  */
 import {Component, OnInit} from "@angular/core";
 import {EventService} from "./Shared/event.service";
-
+import  { ToastrService} from "../common/toastr.service"
 
 @Component({
 selector:'event-list',
@@ -12,7 +12,7 @@ templateUrl:'./app/event/event-list.component.html'
 
 export class EventListComponent implements OnInit{
     events:any[];
-constructor(private eventservice:EventService){
+constructor(private eventservice:EventService,private toastrService:ToastrService){
 
 }
 ngOnInit(){
@@ -26,5 +26,6 @@ ngOnInit(){
 
     handleThumbnailClick(eventName){
 
+      this.toastrService.success(eventName);
     }
 }
