@@ -1,14 +1,14 @@
-<div class="well hoverwell thumbnail">
+<div class="well hoverwell thumbnail" [routerLink]="['/events',event.id]">
     <h2>{{event?.name}}</h2>
     <div>Date: {{event?.date}}</div>
     <div [ngClass]="getEarlyTimeClass()" [ngSwitch]="event?.time">
-         Time: {{event?.time}}
-        <span *ngSwitchCase="'8:00 am'" >(Early Start)</span>
-        <span *ngSwitchCase="'10:00 am'" >(Late Start)</span>
+        Time: {{event?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
     </div>
     <div>Price: ${{event?.price}}</div>
     <div>Location: {{event.location.address}}</div>
     <div *ngIf="event.Nodata">No Data: {{event.Nodata}}</div>
-    <button class="btn-primary" (click)="handleClickMe()" >Click me to send value from Child to Parent</button>
+    <button class="btn-primary" (click)="handleClickMe()">Click me to send value from Child to Parent</button>
 </div>
 

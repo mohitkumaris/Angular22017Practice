@@ -9,16 +9,34 @@ import {EventThumbnailComponent} from "./event/event-thumbnail.component";
 import {NavBarComponent} from "./nav/navbar.component";
 import {EventService} from "./event/Shared/event.service";
 import {ToastrService} from "./common/toastr.service";
+import {EventDetailsComponent} from "./event/event-details/event-details.component"
+import { appRoutes } from "./routes"
+import {RouterModule} from "@angular/router";
+import {CreateEventComponent} from "./event/create-event.component";
+import {Error404Component} from "./error/error.404.component";
+import {EventRouteActivator} from "./event/event-details/event-route-activator.service";
+
 
 @NgModule({
 
-    imports:[BrowserModule],
-    declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent
+    imports:[BrowserModule,
+     RouterModule.forRoot(appRoutes) ],
+    declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,
+        EventDetailsComponent,CreateEventComponent,Error404Component],
+    providers:[
+        EventService,
+        ToastrService,
+        EventRouteActivator,
+        { provide:'CanDeactivateMethod',useValue:checkDirtyState }
     ],
-    providers:[EventService,ToastrService],
     bootstrap:[EventsAppComponent]
 })
 
-export class AppModule{
+export class AppModule{}
 
-}
+    function checkDirtyState(component:CreateEventComponent){
+
+    if(component.isDirty)
+   return window.confirm('Do you really want to exit ?');
+      return true;
+    }

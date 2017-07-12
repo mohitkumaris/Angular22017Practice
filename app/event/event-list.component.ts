@@ -6,7 +6,7 @@ import {EventService} from "./Shared/event.service";
 import  { ToastrService} from "../common/toastr.service"
 
 @Component({
-selector:'event-list',
+
 templateUrl:'./app/event/event-list.component.html'
 })
 
