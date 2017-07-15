@@ -14,6 +14,10 @@ export  class CreateEventComponent{
 
     constructor(private router:Router){}
 
+    saveEvent(newEventForm){
+        console.log(newEventForm);
+    }
+
     cancel(){
 
         this.router.navigate(['/events']);

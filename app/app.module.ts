@@ -18,12 +18,14 @@ import {RouterModule} from "@angular/router";
 import {} from "./event/create-event.component";
 import {Error404Component} from "./error/error.404.component";
 import {AuthService} from "./user/auth.service";
+import {FormsModule} from "@angular/forms";
 
 
 
 @NgModule({
 
     imports:[BrowserModule,
+        FormsModule,
      RouterModule.forRoot(appRoutes) ],
     declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,
         EventDetailsComponent,CreateEventComponent,Error404Component],
