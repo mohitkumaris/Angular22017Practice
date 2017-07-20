@@ -34,9 +34,9 @@
         </div>
         <div class="form-group">
             <label for="abstract">Abstract:</label>
-            <em *ngIf="abstract.invalid && abstract.touched && abstract?.errors.required">Required</em>
-            <em *ngIf="abstract.invalid && abstract.touched  && abstract?.errors.maxLength">Required</em>
-            <em *ngIf="abstract.invalid && abstract.touched  && abstract?.errors.restrictedWords">
+            <em *ngIf="abstract.invalid && abstract.dirty && abstract?.errors.required">Required</em>
+            <em *ngIf="abstract.invalid && abstract.dirty  && abstract?.errors.maxLength">Required</em>
+            <em *ngIf="abstract.invalid && abstract.dirty  && abstract?.errors.restrictedWords">
                 {{abstract.errors.restrictedWords}} is restricted</em>
             <textarea formControlName="abstract" id="abstract" rows=3 class="form-control" placeholder="abstract..."></textarea>
         </div>

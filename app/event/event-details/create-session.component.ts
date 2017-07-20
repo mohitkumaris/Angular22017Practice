@@ -5,12 +5,13 @@
 import {Component, OnInit} from "@angular/core";
 import { FormControl,FormGroup,Validators  } from '@angular/forms'
 import { ISession } from '../Shared/event.model'
+import {restrictedWords} from "../Shared/restricted-words.validators";
 
 @Component({
 templateUrl:'./app/event/event-details/create-session.component.html',
     styles:[`
         em {float:right;color: #bd362f;padding-left: 10px;}
-        .error input { background-color:#bd362f }
+        .error input { border-color:#bd362f }
         .error ::-webkit-input-placeholder {color:#999 }
     `]
 })
@@ -32,7 +33,7 @@ abstract:FormControl;
         this.duration=new FormControl('',Validators.required);
         this.level=new FormControl('',Validators.required);
         this.abstract=new FormControl('',[Validators.required,
-            Validators.maxLength(400),this.restrictedWords]);
+            Validators.maxLength(400),restrictedWords(['foo','bar'])]);
 
         this.newSessionForm=new FormGroup({
             name:this.name,
@@ -44,13 +45,8 @@ abstract:FormControl;
         });
 
     }
-// Custom Validators
-    private restrictedWords(control:FormControl):{[key:string]:any}
-    {
-        return control.value.includes('foo')
-        ? {'restrictedWords':'foo'}
-        : null;
-    }
+
+
 
     saveSession(formValues){
         let session:ISession={
