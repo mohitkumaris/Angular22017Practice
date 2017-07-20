@@ -2,12 +2,13 @@
 /**
  * Created by Mohit Kumar on 7/19/2017.
  */
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 import { FormControl,FormGroup,Validators  } from '@angular/forms'
 import { ISession } from '../Shared/event.model'
 import {restrictedWords} from "../Shared/restricted-words.validators";
 
 @Component({
+    selector:'add-session',
 templateUrl:'./app/event/event-details/create-session.component.html',
     styles:[`
         em {float:right;color: #bd362f;padding-left: 10px;}
@@ -19,6 +20,8 @@ templateUrl:'./app/event/event-details/create-session.component.html',
 export  class CreateSessionComponent implements OnInit{
 
     // reactive forms using model
+ @Output() saveNewSession=new EventEmitter()
+ @Output() CancelSession= new EventEmitter()
 newSessionForm:FormGroup;
 name:FormControl;
 presenter:FormControl;
@@ -59,6 +62,10 @@ abstract:FormControl;
             voters:[]
 
         }
-        console.log(session);
+        this.saveNewSession.emit(session);
+    }
+
+    CancelNewSession(){
+        this.CancelSession.emit();
     }
 }

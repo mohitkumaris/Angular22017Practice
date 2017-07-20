@@ -8,7 +8,7 @@ import {
     EventListComponent,EventThumbnailComponent,
     EventService,EventDetailsComponent,
     CreateEventComponent,EventListResolver,
-    EventRouteActivator,CreateSessionComponent
+    EventRouteActivator,CreateSessionComponent,SessionListComponent
 } from './event/index'
 
 import {NavBarComponent} from "./nav/navbar.component";
@@ -29,7 +29,7 @@ import {FormsModule,ReactiveFormsModule } from "@angular/forms";
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes) ],
     declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,
-        EventDetailsComponent,CreateEventComponent,Error404Component,CreateSessionComponent],
+        EventDetailsComponent,CreateEventComponent,Error404Component,CreateSessionComponent,SessionListComponent],
     providers:[
         EventService,
         ToastrService,
