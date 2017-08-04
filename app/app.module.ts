@@ -13,12 +13,14 @@ import {
 
 import {NavBarComponent} from "./nav/navbar.component";
 import {ToastrService} from "./common/toastr.service";
+
 import { appRoutes } from "./routes"
 import {RouterModule} from "@angular/router";
 
 import {Error404Component} from "./error/error.404.component";
 import {AuthService} from "./user/auth.service";
 import {FormsModule,ReactiveFormsModule } from "@angular/forms";
+import {CollapsibleWellComponent} from "./common/collapsible-well.component";
 
 
 
@@ -29,7 +31,8 @@ import {FormsModule,ReactiveFormsModule } from "@angular/forms";
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes) ],
     declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,
-        EventDetailsComponent,CreateEventComponent,Error404Component,CreateSessionComponent,SessionListComponent],
+        EventDetailsComponent,CreateEventComponent,Error404Component,
+        CreateSessionComponent,SessionListComponent,CollapsibleWellComponent],
     providers:[
         EventService,
         ToastrService,
