@@ -8,7 +8,7 @@ import {
     EventListComponent,EventThumbnailComponent,
     EventService,EventDetailsComponent,
     CreateEventComponent,EventListResolver,
-    EventRouteActivator,CreateSessionComponent,SessionListComponent
+    EventRouteActivator,CreateSessionComponent,SessionListComponent,DurationPipe
 } from './event/index'
 
 import {NavBarComponent} from "./nav/navbar.component";
@@ -32,7 +32,7 @@ import {CollapsibleWellComponent} from "./common/collapsible-well.component";
         RouterModule.forRoot(appRoutes) ],
     declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,
         EventDetailsComponent,CreateEventComponent,Error404Component,
-        CreateSessionComponent,SessionListComponent,CollapsibleWellComponent],
+        CreateSessionComponent,SessionListComponent,CollapsibleWellComponent,DurationPipe],
     providers:[
         EventService,
         ToastrService,
