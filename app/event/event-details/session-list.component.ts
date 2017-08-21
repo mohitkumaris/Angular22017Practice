@@ -11,8 +11,9 @@ import {ISession} from "../Shared/event.model";
 })
 
 export class SessionListComponent implements OnChanges{
-    @Input() sessions:ISession[]
+    @Input() sessions:ISession[];
     @Input() filterBy:string;
+    @Input() SortBy:string;
     VisibleSession:ISession[]=[];
 
     ngOnChanges(){

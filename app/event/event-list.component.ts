@@ -3,7 +3,7 @@
  */
 import {Component, OnInit} from "@angular/core";
 import {EventService} from "./Shared/event.service";
-import  { ToastrService} from "../common/toastr.service"
+
 import {ActivatedRoute} from "@angular/router";
 import {IEvent} from "./Shared/event.model";
 
@@ -14,7 +14,7 @@ templateUrl:'./app/event/event-list.component.html'
 
 export class EventListComponent implements OnInit{
     events:IEvent[];
-constructor(private eventservice:EventService,private toastrService:ToastrService,
+constructor(private eventservice:EventService,
 private routes:ActivatedRoute){
 
 }
@@ -30,8 +30,5 @@ ngOnInit(){
         console.log('received:',data);
     }
 
-    handleThumbnailClick(eventName){
 
-      this.toastrService.success(eventName);
-    }
 }

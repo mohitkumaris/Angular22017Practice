@@ -12,7 +12,7 @@ import {
 } from './event/index'
 
 import {NavBarComponent} from "./nav/navbar.component";
-import {ToastrService} from "./common/toastr.service";
+import {TOASTR_TOKEN} from "./common/toastr.service";
 
 import { appRoutes } from "./routes"
 import {RouterModule} from "@angular/router";
@@ -22,7 +22,7 @@ import {AuthService} from "./user/auth.service";
 import {FormsModule,ReactiveFormsModule } from "@angular/forms";
 import {CollapsibleWellComponent} from "./common/collapsible-well.component";
 
-
+declare let toastr:any;
 
 @NgModule({
 
@@ -35,7 +35,7 @@ import {CollapsibleWellComponent} from "./common/collapsible-well.component";
         CreateSessionComponent,SessionListComponent,CollapsibleWellComponent,DurationPipe],
     providers:[
         EventService,
-        ToastrService,
+        {provide:TOASTR_TOKEN,useValue:toastr},
         EventRouteActivator,
         { provide:'CanDeactivateMethod',useValue:checkDirtyState },
         EventListResolver,
