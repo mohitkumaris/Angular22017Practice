@@ -4,6 +4,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import {EventsAppComponent} from "./events-app.component";
+import { HttpModule} from '@angular/http';
 import {
     EventListComponent,EventThumbnailComponent,
     EventService,EventDetailsComponent,
@@ -28,6 +29,7 @@ declare let toastr:any;
 
     imports:[BrowserModule,
         FormsModule,
+        HttpModule,
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes) ],
     declarations:[EventsAppComponent,EventListComponent,EventThumbnailComponent,NavBarComponent,

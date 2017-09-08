@@ -12,6 +12,6 @@ import {EventService} from "./event.service";
     constructor(private eventservice:EventService){}
 
     resolve(){
-        return this.eventservice.getEvents().map(events=>events);
+        return this.eventservice.getEvents();
     }
  }
