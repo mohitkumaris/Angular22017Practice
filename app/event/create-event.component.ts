@@ -8,7 +8,7 @@ import {EventService} from "./Shared/event.service";
 templateUrl:"./app/event/create-event.component.html",
 styles:[`
         em {float:right;color: #bd362f;padding-left: 10px;}
-        .error input { background-color:#bd362f }
+        .error input { background-color:lightcoral }
         .error ::-webkit-input-placeholder {color:#999 }
     `]
 

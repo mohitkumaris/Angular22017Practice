@@ -7,13 +7,18 @@ import {IEvent} from "./event.model";
 import {Http,Response} from "@angular/http";
 
 @Injectable()
-export class EventService{
+export class EventService {
 
-    constructor(private http:Http){}
-    getEvents():Observable<IEvent[]>{
-      return this.http.get('/api/events').map((response:Response)=>{
-          return <IEvent[]>response.json();
-        })
+    constructor(private http: Http) {
+    }
+
+    getEvents(): Observable<IEvent[]> {
+        let subject = new Subject<IEvent[]>();
+      setTimeout(() =>{ subject.next(EVENTS);
+        subject.complete();},100)
+        return subject;
+
+
 
     }
 
